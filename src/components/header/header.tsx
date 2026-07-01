@@ -4,7 +4,7 @@ import Container from '@mui/material/Container'
 import IconButton from '@mui/material/IconButton'
 import useMediaQuery from '@mui/material/useMediaQuery'
 import { Logo } from '@/components/logo'
-import { Navigation, AuthNavigation } from '@/components/navigation'
+import { Navigation } from '@/components/navigation'
 import { useTheme } from '@mui/material/styles'
 import { Menu, Close } from '@mui/icons-material'
 
@@ -37,7 +37,7 @@ const Header: FC = () => {
                 backgroundColor: 'background.paper',
                 zIndex: 'appBar',
                 position: 'fixed',
-                height: { xs: '100vh', md: 'auto' },
+                height: { xs: '50vh', md: 'auto' },
                 top: visibleMenu ? 0 : '-120vh',
                 left: 0,
               }),

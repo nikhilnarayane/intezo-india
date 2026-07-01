@@ -33,6 +33,21 @@ body {
   align-items: center;
 }
 
+.logo{
+  width: 90px;
+  height: 90px;
+}
+
+@media screen and (max-width: 600px) {
+  .logoCenter{
+    justify-content: center;
+  }
+  .logo{
+  width: 50px;
+  height: 50px;
+}
+}
+
 @-webkit-keyframes click_animation {
   from {
     -webkit-transform: scale(1);

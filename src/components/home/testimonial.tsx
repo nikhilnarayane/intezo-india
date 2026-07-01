@@ -75,7 +75,7 @@ const HomeTestimonial: FC = () => {
                 position: 'relative',
                 fontSize: { xs: 36, md: 46 },
                 mt: { xs: 0, md: 7 },
-                mb: 4,
+                mb: 1,
                 lineHeight: 1,
                 fontWeight: 'bold',
               }}
@@ -97,7 +97,7 @@ const HomeTestimonial: FC = () => {
                     position: 'absolute',
                     top: { xs: 20, md: 28 },
                     left: 2,
-                    '& img': { width: { xs: 130, md: 175 }, height: 'auto' },
+                    '& img': { width: { xs: 90, md: 175 }, height: 'auto' },
                   }}
                 >
                   {/* eslint-disable-next-line @next/next/no-img-element */}

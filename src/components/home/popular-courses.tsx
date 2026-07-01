@@ -67,7 +67,7 @@ const HomePopularCourse: FC = () => {
   const sliderConfig = {
     infinite: true,
     autoplay: true,
-    speed: 300,
+    speed: 500,
     slidesToShow: matchMobileView ? 1 : 3,
     slidesToScroll: 1,
     prevArrow: <SliderArrow type="prev" /> as any,
@@ -91,7 +91,7 @@ const HomePopularCourse: FC = () => {
         backgroundColor: 'background.default',
       }}
     >
-      <Container maxWidth="lg">
+      <Container maxWidth="lg" sx={{p:1}}>
         <Grid container spacing={2}>
           <Grid item xs={12} md={3}>
             <Box
@@ -105,7 +105,7 @@ const HomePopularCourse: FC = () => {
             >
               <Typography variant="h1" sx={{ mt: { xs: 0, md: -5 }, fontSize: { xs: 30, md: 48 } }}>
                 Solutions
-                 <svg version="1.1" viewBox="0 0 3183 3072" style={{ position: 'relative', top: '-8px', width: '10%' }}>
+                 <svg version="1.1" viewBox="0 0 3183 3072" style={{ position: 'relative', top: '-8px', width: '10%',paddingRight:'5px' }} xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
                       <g id="Layer_x0020_1">
                         <path
                           fill="#127C71"
@@ -120,8 +120,7 @@ const HomePopularCourse: FC = () => {
                           d="M566 3c0,0 0,0 0,0 -219,-26 -427,134 -462,356 -44,271 -255,1921 90,1962 245,62 628,-1392 704,-1869 36,-221 -114,-424 -332,-449z"
                         />
                       </g>
-                    </svg>
-                  <br />
+                    </svg> 
                   We Provide
               </Typography>
             </Box>
