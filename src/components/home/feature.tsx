@@ -183,7 +183,8 @@ const HomeFeature: FC = () => {
             </Typography>
 
             <Typography sx={{ color: 'text.secondary', mb: 2, ml: { xs: 0, md: 4 } }}>
-              To inspire innovation, transform spaces, and empower businesses through creative design and advanced technology.
+              To become a trusted and innovative service provider by delivering high-quality interior and
+technology solutions that create value for customers through excellence, integrity, and continuous innovation.
             </Typography>
 
             <Grid container spacing={2} sx={{ ml: { xs: 0, md: 2 } }}>

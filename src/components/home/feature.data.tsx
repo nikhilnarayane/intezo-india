@@ -12,23 +12,23 @@ interface Data {
 
 export const data: Data[] = [
   {
-    title: 'Innovation First',
-    description: 'Deliver creative design and advanced technology solutions that drive meaningful transformation.',
+    title: 'Reliable & Cost-effective',
+    description: 'To provide reliable and cost-effective business solutions.',
     icon: <LightbulbOutlined />,
   },
   {
-    title: 'Customer-Centric Excellence',
-    description: 'Build lasting relationships by providing reliable, high-quality, and customized services.',
+    title: 'Customer Satisfaction.',
+    description: 'To maintain the highest standards of professionalism and customer satisfaction.',
     icon: <HandshakeOutlined />,
   },
   {
-    title: 'Sustainable Growth',
-    description: 'Create innovative spaces and digital solutions that contribute to long-term success and sustainability.',
+    title: 'Modern Technologies',
+    description: 'To adopt modern technologies and industry best practices.',
     icon: <TrendingUpOutlined />,
   },
   {
-    title: 'Global Impact',
-    description: 'Become a trusted leader recognized for excellence in interior design, architecture, and digital innovation.',
+    title: 'Trust & Quality',
+    description: 'To establish long-term business relationships based on trust and quality.',
     icon: <PublicOutlined />,
   },
 ]

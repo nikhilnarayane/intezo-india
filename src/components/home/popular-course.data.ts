@@ -4,7 +4,7 @@ export const data: Array<Course> = [
   {
     id: 1,
     cover: '/images/courses/a9e7b27a0c5e986a22416d79e2e9dba9.jpg',
-    title: 'Interior Designing with Complete Solutions',
+    title: 'Interior Designing and Interior Decoration Services',
     rating: 5,
     ratingCount: 8,
     price: 25,
@@ -13,7 +13,7 @@ export const data: Array<Course> = [
   {
     id: 2,
     cover: '/images/courses/alvaro-reyes-qWwpHwip31M-unsplash.jpg',
-    title: 'Vastu Consultancy for Home and Office Spaces',
+    title: 'Residential, Commercial, Corporate and Industrial Interior Planning',
     rating: 5,
     ratingCount: 15,
     price: 20,
@@ -22,7 +22,7 @@ export const data: Array<Course> = [
   {
     id: 3,
     cover: '/images/courses/christopher-gower-m_HRfLhgABo-unsplash.jpg',
-    title: 'Architectural Consultancy for Modern Spaces',
+    title: 'Vastu Consultancy and Space Planning Services',
     rating: 4,
     ratingCount: 7,
     price: 30,
@@ -31,7 +31,7 @@ export const data: Array<Course> = [
   {
     id: 4,
     cover: '/images/courses/true-agency-o4UhdLv5jbQ-unsplash.jpg',
-    title: 'Software Development',
+    title: 'Software Design, Development, Maintenance and Customization',
     rating: 4,
     ratingCount: 12,
     price: 30,
@@ -40,7 +40,7 @@ export const data: Array<Course> = [
   {
     id: 5,
     cover: '/images/courses/stillness-inmotion-Jh6aQX-25Uo-unsplash.jpg',
-    title: 'Website Development',
+    title: 'Website Design, Development and Maintenance',
     rating: 4,
     ratingCount: 32,
     price: 35,
@@ -49,7 +49,7 @@ export const data: Array<Course> = [
   {
     id: 6,
     cover: '/images/courses/stillness-inmotion-YSCCnRGrD-4-unsplash.jpg',
-    title: 'Mobile App Development',
+    title: 'Information Technology (IT) Consultancy Services',
     rating: 5,
     ratingCount: 14,
     price: 35,
@@ -58,7 +58,7 @@ export const data: Array<Course> = [
   {
     id: 7,
     cover: '/images/courses/grovemade-RvPDe41lYBA-unsplash.jpg',
-    title: 'IT Consultancy for Businesses',
+    title: 'Digital Transformation and Business Automation Solutions',
     rating: 4,
     ratingCount: 6,
     price: 25,
@@ -67,7 +67,7 @@ export const data: Array<Course> = [
   {
     id: 8,
     cover: '/images/courses/grovemade-RvPDe41lYBA-unsplash.jpg',
-    title: 'Digital Solutions',
+    title: 'Mobile Application Development',
     rating: 4,
     ratingCount: 6,
     price: 25,
@@ -76,7 +76,25 @@ export const data: Array<Course> = [
   {
     id: 9,
     cover: '/images/courses/grovemade-RvPDe41lYBA-unsplash.jpg',
-    title: 'Business Technology Solutions',
+    title: 'Cloud-Based Solutions and IT Support Services',
+    rating: 4,
+    ratingCount: 6,
+    price: 25,
+    category: 'Beginner',
+  },
+    {
+    id: 10,
+    cover: '/images/courses/grovemade-RvPDe41lYBA-unsplash.jpg',
+    title: 'Digital Marketing and Online Business Solutions',
+    rating: 4,
+    ratingCount: 6,
+    price: 25,
+    category: 'Beginner',
+  },
+    {
+    id: 11,
+    cover: '/images/courses/grovemade-RvPDe41lYBA-unsplash.jpg',
+    title: 'Technology Consulting and Software Implementation',
     rating: 4,
     ratingCount: 6,
     price: 25,

@@ -18,8 +18,12 @@ const Footer: FC = () => {
               <Typography component="h2" variant="h2" sx={{ mb: 2 }}>
                 INTEZO INDIA
               </Typography>
-              <Typography variant="subtitle1" sx={{ letterSpacing: 1, mb: 2 }}>
-               Established in 2015, INTEZO INDIA is your trusted partner for innovative interior design, architecture, software development, and digital solutions.
+              <Typography variant="subtitle1" sx={{ letterSpacing: 0, mb: 2 }}>
+              The Company is committed to delivering high-quality, customer-centric, and technology-
+driven solutions to individuals, businesses, institutions, and government organizations across
+
+India. The management focuses on professionalism, quality, innovation, timely execution,
+and long-term customer relationships.
               </Typography>
               <FooterSocialLinks />
             </Box>

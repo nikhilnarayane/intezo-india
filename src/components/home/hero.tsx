@@ -139,9 +139,11 @@ const HomeHero: FC = () => {
               </Box>
               <Box sx={{ mb: 4, width: { xs: '100%', md: '80%' } }}>
                 <Typography sx={{ color: 'text.secondary', lineHeight: 1.6 }}>
-                  {
-                    "At INTEZO INDIA PVT. LTD., we transform ideas into exceptional spaces and powerful digital solutions. Blending creativity, innovation, and technology, we deliver designs and software that make a lasting impact. From interior and architectural excellence to cutting-edge web and mobile development, we create solutions tailored to your vision. Driven by quality, trust, and innovation, we empower businesses to grow, succeed, and shape the future."
-                  }
+                    &quot;INTEZO INDIA SOLUTIONS PRIVATE LIMITED is a private limited company incorporated
+                    under the provisions of the Companies Act, 2013. The Company is established with the
+                    objective of providing innovative and professional solutions in the fields of Interior
+                    Designing, Vastu Consultancy, Information Technology, Software Development, Website
+                    Development, IT Consultancy, Digital Solutions, and allied business activities.&quot;
                 </Typography>
               </Box>
               <Box sx={{ '& button': { mr: 2 } }}>
@@ -205,7 +207,7 @@ const HomeHero: FC = () => {
               </Box>
             </Box>
             <Box sx={{ lineHeight: 0 }}>
-              <Image src="/images/home-hero.jpg" width={775} height={787} alt="Hero img" />
+              <Image src="/images/home-hero.png" width={775} height={787} alt="Hero img" />
             </Box>
           </Grid>
         </Grid>

@@ -1,3 +1,8 @@
+"use client";
+
+import { ChangeEvent, FormEvent, useState } from "react";
+import { getSupabaseClient } from "@/lib/supabase";
+
 import {
   Box,
   Button,
@@ -16,11 +21,79 @@ import PhoneOutlinedIcon from "@mui/icons-material/PhoneOutlined";
 import AccessTimeOutlinedIcon from "@mui/icons-material/AccessTimeOutlined";
 import SendIcon from "@mui/icons-material/Send";
 
+interface FormState {
+  full_name: string;
+  email: string;
+  phone: string;
+  subject: string;
+  message: string;
+}
+
 export default function ContactPage(): JSX.Element {
-  
+  const [form, setForm] = useState<FormState>({
+    full_name: "",
+    email: "",
+    phone: "",
+    subject: "",
+    message: "",
+  });
+
+  const [loading, setLoading] = useState(false);
+
+  const handleChange = (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ): void => {
+    setForm({
+      ...form,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = async (
+    e: FormEvent<HTMLFormElement>
+  ): Promise<void> => {
+    e.preventDefault();
+
+    setLoading(true);
+
+    const supabase = getSupabaseClient();
+
+    if (!supabase) {
+      alert("Supabase is not configured.");
+      setLoading(false);
+      return;
+    }
+
+    const { error } = await supabase.from("contacts").insert([
+      {
+        full_name: form.full_name,
+        email: form.email,
+        phone: form.phone,
+        subject: form.subject,
+        message: form.message,
+      },
+    ]);
+
+    setLoading(false);
+
+    if (error) {
+      alert(error.message);
+      return;
+    }
+
+    alert("Message Sent Successfully!");
+
+    setForm({
+      full_name: "",
+      email: "",
+      phone: "",
+      subject: "",
+      message: "",
+    });
+  };
+
   return (
     <Container maxWidth="xl" sx={{ py: 8 }}>
-
       {/* Heading */}
       <Box textAlign="center" mb={6}>
         <Typography variant="h3" fontWeight={700}>
@@ -31,7 +104,7 @@ export default function ContactPage(): JSX.Element {
           color="text.secondary"
           sx={{ maxWidth: 700, mx: "auto", mt: 2 }}
         >
-          Have a project in mind? Let&rsquo;s discuss how INTEZO INDIA can help
+          Have a project in mind? Let&apos;s discuss how INTEZO INDIA can help
           transform your ideas into reality.
         </Typography>
       </Box>
@@ -41,8 +114,8 @@ export default function ContactPage(): JSX.Element {
       <Box
         sx={{
           display: "flex",
-          gap: 3,
           flexWrap: "wrap",
+          gap: 3,
           justifyContent: "center",
           mb: 8,
         }}
@@ -75,10 +148,6 @@ export default function ContactPage(): JSX.Element {
               width: 260,
               textAlign: "center",
               borderRadius: 3,
-              transition: ".3s",
-              "&:hover": {
-                transform: "translateY(-8px)",
-              },
             }}
           >
             <CardContent sx={{ py: 5 }}>
@@ -99,16 +168,19 @@ export default function ContactPage(): JSX.Element {
         ))}
       </Box>
 
-      {/* Form + Map */}
+      {/* Contact Form + Map */}
 
       <Box
         sx={{
           display: "flex",
           gap: 5,
-          flexDirection: { xs: "column", lg: "row" },
+          flexDirection: {
+            xs: "column",
+            lg: "row",
+          },
         }}
       >
-        {/* Contact Form */}
+        {/* Form */}
 
         <Paper
           elevation={3}
@@ -118,61 +190,101 @@ export default function ContactPage(): JSX.Element {
             borderRadius: 3,
           }}
         >
-          <Typography variant="h4" fontWeight={700} mb={1}>
+          <Typography variant="h4" fontWeight={700}>
             Send a Message
           </Typography>
 
           <Typography color="text.secondary" mb={4}>
-            Fill out the form and we&rsquo;ll contact you shortly.
+            Fill out the form and we&apos;ll contact you shortly.
           </Typography>
 
-          <Stack spacing={3}>
+          <Box component="form" onSubmit={handleSubmit}>
+            <Stack spacing={3}>
+              <Box
+                sx={{
+                  display: "flex",
+                  gap: 2,
+                  flexDirection: {
+                    xs: "column",
+                    md: "row",
+                  },
+                }}
+              >
+                <TextField
+                  fullWidth
+                  required
+                  label="Full Name"
+                  name="full_name"
+                  value={form.full_name}
+                  onChange={handleChange}
+                />
 
-            <Box
-              sx={{
-                display: "flex",
-                gap: 2,
-                flexDirection: { xs: "column", md: "row" },
-              }}
-            >
-              <TextField fullWidth label="Full Name" />
+                <TextField
+                  fullWidth
+                  required
+                  type="email"
+                  label="Email Address"
+                  name="email"
+                  value={form.email}
+                  onChange={handleChange}
+                />
+              </Box>
 
-              <TextField fullWidth label="Email Address" />
-            </Box>
+              <Box
+                sx={{
+                  display: "flex",
+                  gap: 2,
+                  flexDirection: {
+                    xs: "column",
+                    md: "row",
+                  },
+                }}
+              >
+                <TextField
+                  fullWidth
+                  label="Phone Number"
+                  name="phone"
+                  value={form.phone}
+                  onChange={handleChange}
+                />
 
-            <Box
-              sx={{
-                display: "flex",
-                gap: 2,
-                flexDirection: { xs: "column", md: "row" },
-              }}
-            >
-              <TextField fullWidth label="Phone Number" />
+                <TextField
+                  fullWidth
+                  required
+                  label="Subject"
+                  name="subject"
+                  value={form.subject}
+                  onChange={handleChange}
+                />
+              </Box>
 
-              <TextField fullWidth label="Subject" />
-            </Box>
+              <TextField
+                fullWidth
+                required
+                multiline
+                rows={6}
+                label="Message"
+                name="message"
+                value={form.message}
+                onChange={handleChange}
+              />
 
-            <TextField
-              fullWidth
-              multiline
-              rows={6}
-              label="Message"
-            />
-
-            <Button
-              variant="contained"
-              size="large"
-              endIcon={<SendIcon />}
-              sx={{
-                width: "fit-content",
-                px: 4,
-                py: 1.5,
-              }}
-            >
-              Send Message
-            </Button>
-
-          </Stack>
+              <Button
+                type="submit"
+                variant="contained"
+                size="large"
+                disabled={loading}
+                endIcon={<SendIcon />}
+                sx={{
+                  width: "fit-content",
+                  px: 4,
+                  py: 1.5,
+                }}
+              >
+                {loading ? "Sending..." : "Send Message"}
+              </Button>
+            </Stack>
+          </Box>
         </Paper>
 
         {/* Google Map */}
@@ -198,7 +310,6 @@ export default function ContactPage(): JSX.Element {
             loading="lazy"
           />
         </Paper>
-
       </Box>
     </Container>
   );
